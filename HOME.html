@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html style="font-family:mangal, sans-serif;font-size:15px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSRTC BOARD CREATOR</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=nunito">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body style="color:#ffffff;font-family:nunito, sans-serif;">
+    <div>
+        <nav class="navbar navbar-light navbar-expand fixed-top navigation-clean" style="background-color:#333333;">
+            <div class="container">
+			<a class="navbar-brand text-white" data-aos="slide-right" data-aos-duration="1000" data-aos-once="true">&nbsp;&nbsp;
+			<span class="text-uppercase text-warning bg-dark">&nbsp; MSRTC &nbsp;</span> &nbsp;ROUTE&nbsp;DISPLAY&nbsp;BOARD CREATEOR |<sub>&nbsp; Demo - Ratnagiri</sub></a> 
+                <button
+                    class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1"></div>
+            </div>
+        </nav>
+    </div>
+    <div data-aos="fade-down" data-aos-duration="1000" style="background-position:center;background-size:cover;height:550px;background-image:url(&quot;assets/img/shivshahi.jpg&quot;);"></div>
+    <div>
+        <div class="header-blue" >
+            <nav class="navbar navbar-dark navbar-expand navigation-clean-search" style="height:0px;">
+                <div class="container"><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+				<span class="sr-only">Toggle navigation</span> <span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1"></div>
+                </div>
+            </nav>
+			
+			
+            <form method="post" >
+                <div class="container hero">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-row" data-aos="fade" data-aos-once="true">
+                                <div class="col-sm-4 col-md-4">
+								
+                                    <div class="pricingTable purple"  id="sapp">
+                                        <div data-aos="zoom-in" data-aos-once="true" class="pricing-plans" style="background-color:#008772;"><span class="text-capitalize month" data-bs-hover-animate="flash"><i class="fa fa-arrow-circle-left"> </i> <strong>&nbsp; Start place</strong></span><span class="price-value"></span></div>
+                                        <div class="pricingContent">
+                                            <div class="col">
+                                                <hr><select v-model="selDist" class="form-control form-control-sm" name="srcdist" required="">
+												<optgroup label="- District -">
+												<option v-for="di in Dists" :value="di">{{ di.label }}</option>
+												</optgroup></select>
+                                                <hr>
+                                            </div>
+                                            <div class="col"><select id="ssrc"  v-model="selTaluka" class="form-control form-control-sm" name="srcplace" required="">
+											<optgroup label="- Source place -">
+											 <option v-for="option in selDist.options">{{ option }}</option>
+											</optgroup></select>
+                                                <hr>
+                                            </div>
+                                            <ul></ul>
+                                        </div>
+                                    </div>
+                                </div>
+								
+
+								
+								
+                                <div class="col-sm-4 col-md-4">
+<div class="pricingTable yellow" id="vapp">
+                                        <div data-aos="zoom-in" data-aos-once="true" class="pricing-plans" style="background-color:#8c60c1;"><span class="price-value"></span><span class="text-capitalize month" data-bs-hover-animate="flash">Route &nbsp;  <i class="fa fa-exchange"></i> &nbsp;  Intermediate places </div>    
+										
+										<div class="col">
+						       <div class="form-row">
+        <div class="col-6">
+            <hr />
+			<select id="stal1" required class="form-control form-control-sm"><optgroup label="- Select -">
+		 <option v-for="t1 in taluka" v-bind:value="t1.value">{{ t1.value }}</option>
+		</optgroup></select>
+			</div>
+        <div class="col-6">
+            <hr />
+			<select id="stal2" required class="form-control form-control-sm"><optgroup label="- Select -">
+			 <option v-for="t2 in taluka" v-bind:value="t2.value">{{ t2.value }}</option>
+			</optgroup></select>
+			</div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-6">
+            <hr />
+			<select id="stal3" required class="form-control form-control-sm"><optgroup label="- Select -">
+			 <option v-for="t3 in taluka" v-bind:value="t3.value">{{ t3.value }}</option>
+			</optgroup></select>
+            <hr />
+        </div>
+        <div class="col-6">
+            <hr />			<select id="stal4"  required class="form-control form-control-sm"><optgroup label="- Select -">
+		 <option v-for="t4 in taluka" v-bind:value="t4.value">{{ t4.value }}</option>
+			</optgroup></select>
+            <hr />
+        </div>
+    </div>
+						   </div>
+		
+
+</div>
+                                </div>
+								
+								
+																
+                                <div class="col-sm-4 col-md-4">
+								
+                                    <div class="pricingTable green" id="dapp">
+                                        <div data-aos="zoom-in" data-aos-once="true" class="pricing-plans" style="background-color:#00a0ba;"><span class="price-value"></span><span class="text-capitalize month" data-bs-hover-animate="flash">Destination place &nbsp;<i class="fa fa-arrow-circle-right"></i></span></div>
+                                            <div class="pricingContent">
+                                                <div class="col">
+                                                    <hr><select v-model="selDist"  class="form-control form-control-sm" name="dedist" required="">
+													<optgroup label="- District -">
+														<option v-for="di in Dists" :value="di">{{ di.label }}</option>
+													</optgroup>
+													</select>
+                                                    <hr>
+                                                </div>
+                                                <div class="col"><select id="sdest"  v-model="selTaluka" class="form-control form-control-sm" name="deplace" required="">
+												<optgroup label="- Destination place -">
+												 <option v-for="option in selDist.options">{{ option }}</option>
+												</optgroup></select>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+								
+								
+                            </div>
+                        </div>
+                    </div>
+					
+                    <hr>
+                    <h4 class="text-center">
+					<button class="btn btn-warning" type="button"  onclick="myFunction()"> Generate board </button></h4>
+                    <hr style="background-color:#e8ae42;">
+					
+					    <div id="board">
+                    <div class="form-row justify-content-center align-items-center" style="background-color:ghostwhite;color:#000000;border:1px dotted gray; padding:10px" >
+                        <div class="col-4 align-self-center">
+                            <h2 class="text-center" style="color:#ce1126;"><strong id="srcp"> </strong></h2>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-row" style="height:50%;">
+                                <div class="col">
+                                    <h4 class="text-center" style="color:#0c1975;"><strong id="v1"></strong></h4>
+                                </div>
+                                <div class="col">
+                                    <h4 class="text-center" style="color:#0c1975;"><strong id="v2"></strong></h4>
+                                </div>
+                            </div>
+                            <div class="form-row" style="height:50%;">
+                                <div class="col">
+                                    <h4 class="text-center" style="color:#0c1975;"><strong id="v3"></strong></h4>
+                                </div>
+                                <div class="col">
+                                    <h4 class="text-center" style="color:#0c1975;"><strong id="v4"></strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <h2 class="text-center" style="color:#ce1126;"><strong id="destp"> </strong></h2>
+                        </div>
+                    </div>
+					
+					
+                    </div>
+
+                    <hr style="background-color:#e8ae42;">
+                    <h6 class="text-center"><button class="btn btn-success" onclick="printDiv('board')" type="button"> Print </button></h6>
+                    <hr>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+	
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/srcdata.js"></script>
+    <script src="assets/js/destdata.js"></script>
+    <script src="assets/js/viadata.js"></script>
+</body>
+
+</html>
